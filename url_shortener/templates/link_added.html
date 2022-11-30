@@ -1,0 +1,64 @@
+{% extends 'template.html' %} {% block content %}
+    <section class="section" style="display: flex; justify-content: space-between; flex-direction: column; gap: 4vw;">
+    <div class="container">
+        <p class="is-size-2 has-text-centered has-text-weight-bold">Success!</p>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-half">
+        <div class="container box">
+            <div class="field">
+            <label class="label">Original URL</label>
+            <div class="control">
+                <input
+                class="input"
+                type="text"
+                name="original_url"
+                value="{{ original_url }}"
+                />
+            </div>
+            </div>
+            <div class="field">
+            <label class="label">New URL</label>
+            <div class="control">
+                <input
+                class="input"
+                type="text"
+                name="original_url"
+                id="new_url"
+                value="{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}"
+                />
+            </div>
+            </div>
+            <div class="control">
+            <div class="tooltip">
+                <button
+                onclick="myFunction()"
+                onmouseout="outFunc()"
+                class="button is-info"
+                >
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                Copy text
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <script>
+    function myFunction() {
+        var copyText = document.getElementById("new_url");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied!";
+    }
+
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+    </script>
+{% endblock %}
