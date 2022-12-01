@@ -6,7 +6,8 @@ This is A Basic URL Shortener Built Using Flask
 # Requirements
 
 - Python 3 and above
--PIPENV
+
+- PIPENV
 >pip install pipenv
 
 - Flask
