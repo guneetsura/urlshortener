@@ -21,5 +21,6 @@ This is A Basic URL Shortener Built Using Flask
 
 Simply open terminal in your folder and run the command
 >pipenv shell
+
 Set environment variables (if needed), then run
 >flask run
