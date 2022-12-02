@@ -24,3 +24,8 @@ Simply open terminal in your folder and run the command
 
 Set environment variables (if needed), then run
 >flask run
+
+# Website Login Details
+
+Username = Admin
+Password = password
